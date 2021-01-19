@@ -135,10 +135,10 @@ sudo systemctl start go-agent
 Ensure the server has started by browsing to http://<consolemangerip:8153
 
 Click Agents on the top menu
-![agents.png](../images%5Cagents.png)
+![agents.png](../images/agents.png)
 
 We should see our local machine registered as an agent.
-![agentsreg.PNG](../images%5Cagentsreg.PNG)
+![agentsreg.PNG](../images/agentsreg.PNG)
 
 
 The last tool we are going to install before we secure our 2 web services on ssl is kubectl.  This will allow us to administrate  the Kubernetes  clusters once they are setup.  
@@ -170,13 +170,13 @@ chown go:go /etc/go/gocd.passwd
 ```
 Go back to your GoCD server at http:/<console ip>:8153
 On the top menu click admin/authorization configuration
-![adminconfig.png](../images%5Cadminconfig.png)
+![adminconfig.png](../images/adminconfig.png)
 Click the Add Button then choose Password File Authentication under plugin
-![passwordfile.png](../images%5Cpasswordfile.png)
+![passwordfile.png](../images/passwordfile.png)
 
 For id you can define anything
 Under password path enter /etc/go/gocd.passwd
-![passwordfile.png](../images%5Cpasswordfile.png)
+![passwordfile.png](../images/passwordfile.png)
 
 
 Click test connection and save.
@@ -293,7 +293,7 @@ ACMEDNS_URL = "http://localhost:8081"
 
 
 Wherever you dns is being hosted you have to create entries similar to this:
- ![dnswildcard.png](../images%5Cdnswildcard.png)
+ ![dnswildcard.png](../images/dnswildcard.png)
 
 Now we need to run the certbot program. Now run the following on the console: 
 
@@ -399,7 +399,7 @@ Now add the following into the this file:
 
 Finally create 2 dns entries in your provider which look like this, using your ip's instead of mine:
 
- ![arecords.png](../images%5Carecords.png)
+ ![arecords.png](../images/arecords.png)
 
 
 Restart apache on the console: 

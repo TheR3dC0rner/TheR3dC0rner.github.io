@@ -135,6 +135,7 @@ sudo systemctl start go-agent
 Ensure the server has started by browsing to http://<consolemangerip:8153
 
 Click Agents on the top menu
+
 ![agents.png](../images/agents.png)
 
 We should see our local machine registered as an agent.

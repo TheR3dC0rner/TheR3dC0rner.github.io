@@ -132,7 +132,7 @@ sudo systemctl start go-server
 sudo systemctl start go-agent
 ```
 
-Ensure the server has started by browsing to http://<consolemangerip:8153
+Ensure the server has started by browsing to http://consolemanagerip:8153
 
 Click Agents on the top menu
 

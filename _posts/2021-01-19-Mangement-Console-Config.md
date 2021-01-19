@@ -96,18 +96,18 @@ docker-compose up -d
 ```
 
 Browse to the ip of your management console http://<your ip>:8888.  Click register and this will start the setup.  
-![giteaconfig.png](../images%5Cgiteaconfig.png)
+![giteaconfig.png](../images/giteaconfig.png)
 
  
 Accept all the defaults and click the install Gitea button:
 
 
- ![installgitea.png](../images%5Cinstallgitea.png)
+ ![installgitea.png](../images/installgitea.png)
 
 
 Once it redirects you to http://localhost:3000 browse back to your host on port 8888
 Click register again and this time it will create your first account which is the admin account.   We will secure this with SSL later on after installing the CI/CD.  
-![registergitea.png](../images%5Cregistergitea.png)
+![registergitea.png](../images/registergitea.png)
  
 Next we are going to install our CI/CD.  I prefer GoCD because its easy to use, can call command lines as part of the pipline, so I can use it with ansible and supports easy templating.  Installing GoCD server is very similar to how we install docker.  Add the repository and then install the package. 
 Perform the following in your console: 

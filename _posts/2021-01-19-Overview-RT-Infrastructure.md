@@ -15,9 +15,9 @@ A Management server:
 - Kubectl  for managing the Kubernetes infrastructure
 <br/><br/>
 
-2 K3S cluster, one for production and one for staging:
+K3s:
 - 3 masters controllers per cluster for HA
-- 2 worker nodes per cluster for more resources
+- 3 worker nodes per cluster for more resources
 - Longhorn installed for volume distribution 
 - Fluentd  for sending logs to a logging server
 

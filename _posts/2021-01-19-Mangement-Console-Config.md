@@ -1,4 +1,4 @@
-In this first technical entry for setting up the infrastructure is we are going to setup the management console for our infrastructure.  This will act as a jump console and deployment console for all the main cluster.  For the manager the first thing we have to do is generate ssh keys if this is not built into your template.  Ansible is going to need keys to login remotely.  
+In this first technical entry for setting up the infrastructure is we are going to setup the management console for our infrastructure.  This will act as a jump console and deployment console for the main cluster.  For the manager the first thing we have to do is generate ssh keys if this is not built into your template.  Ansible is going to need keys to login remotely.  
 To generate your keys use this command:
 
 ```

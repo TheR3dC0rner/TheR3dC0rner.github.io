@@ -8,11 +8,11 @@ To build these components you will need some sort of virtual infrastructure, bar
 <br/><br/>
 We will need several components for this infrastructure.   In each blog I will go into a lot more detail of components, this first blog is just an overview of everything. 
 A Management server:
-- Docker  for building images and pushing to our private docker registry
-- Gitea  a light weight git repistory
-- GoCD  an easy to use CI/CD
-- Ansible  A python based automation which will be used to automate the entire infrastructure 
-- kubectl  for managing the Kubernetes infrastructure
+- Docker --- For building images and pushing to our private docker registry
+- Gitea --- A light weight git repistory
+- GoCD --- An easy to use CI/CD
+- Ansible --- A python based automation which will be used to automate the entire infrastructure 
+- kubectl --- For managing the Kubernetes infrastructure
 <br/><br/>
 
 K3s:

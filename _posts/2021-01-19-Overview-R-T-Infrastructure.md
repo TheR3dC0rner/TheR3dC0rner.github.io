@@ -16,16 +16,16 @@ A Management server:
 <br/><br/>
 
 K3s:
-- 3 masters controllers per cluster for HA
-- 3 worker nodes per cluster for more resources
-- Longhorn installed for volume distribution 
-- Fluentd  for sending logs to a logging server
+- 3 masters controllers --- For HA
+- 3 worker nodes --- For fmore resources
+- Longhorn -- For volume distribution 
+- Fluentd --- Fr sending logs to a logging server
 
 <br/><br/>
 Internal to the cluster core functions:
-- Apache reverse proxy  This will be used instead of an ingress controller to allow the use of a script called mkhtacess_red allowing for protection against blueteams and sandboxes
-- Apache web server  this will host any dummy sites, phishing site websites, etc.
-- Docker registry
+- Apache reverse proxy --- This will be used instead of an ingress controller to allow the use of a script called mkhtacess_red allowing for protection against blueteams and sandboxes
+- Apache web server --- This will host any dummy sites, phishing site websites, etc.
+- Docker registry --- To hold our docker images
 <br/><br/>
 
 Internal C2 Components:
@@ -34,14 +34,14 @@ Internal C2 Components:
   
 <br/><br/>
 Logging and alerting:
-- Graylog -- A logging server for getting logs from containers and applications
-- Slack -- An online chat service so we can set alerts to our phones
+- Graylog --- A logging server for getting logs from containers and applications
+- Slack --- An online chat service so we can set alerts to our phones
 
 <br/><br/>
-Remote Proxies -- These are the redirectors for our deployed future c2s.  These will be deployed usually as nano machines in the whatever cloud provider one chooses to use and reverse ssh tunnel to our load balancers.
+Remote Proxies --- These are the redirectors for our deployed future c2s.  These will be deployed usually as nano machines in the whatever cloud provider one chooses to use and reverse ssh tunnel to our load balancers.
 
 <br/><br/>
-2 Nginx load blancers -- These accept reverse ssh from our remote proxies 
+2 Nginx load blancers --- These accept reverse ssh from our remote proxies 
 
 <br/><br/>
 The basic layout of the infrastructure looks a bit like this:

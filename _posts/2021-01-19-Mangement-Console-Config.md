@@ -250,8 +250,8 @@ nsname = "ns1.acme.rtinf.link"
 nsadmin = "admin.rtinf.link"
 # predefined records served in addition to the TXT
 records = [
-    "acme.rtinf.link. A 73.213.247.3",
-    "ns1.rtinf.link. A 73.213.247.3",
+    "acme.rtinf.link. A 55.55.55.55",
+    "ns1.rtinf.link. A 55.55.55.55",
     "acme.rtinf.link. NS ns1.acme.rtinf.link.",
 ]
 debug = false
@@ -286,6 +286,7 @@ cd ~/acme-dns/
 docker-compose build
 docker-compose up -d
 ```
+After launching the docker application on our manager you will need to open a firewall rule to point from your external ip to the acme-dns.  The rule should go from port 53 to port 5353 on our management console.
 
 Lastly, we need to get the certbot hook
 First make sure the lets encrypt directory exists and wget the dns hook. 

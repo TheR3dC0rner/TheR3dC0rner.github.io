@@ -141,6 +141,17 @@ Click Agents on the top menu
 We should see our local machine registered as an agent.
 ![agentsreg.PNG](../images/agentsreg.PNG)
 
+We are going to need to use the ssh keys we generated later to deploy to our servers.  To do this we are going to issue the following commands at the console.
+
+```
+mkdir /var/go/.ssh
+sudo chmod 700 /var/go/.ssh
+sudo chown go:go /var/go/.ssh
+cd ~/.ssh
+sudo id_ecdsa /var/go/.ssh
+sudo chown go:go /var/go/.ssh/id_ecdsa
+sudo chmod 600 /var/go/.ssh/id_ecdsa
+```
 
 The last tool we are going to install before we secure our 2 web services on ssl is kubectl.  This will allow us to administrate  the Kubernetes  clusters once they are setup.  
 

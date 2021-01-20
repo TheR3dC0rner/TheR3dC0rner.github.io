@@ -1,10 +1,10 @@
-In this first technical entry for setting up the infrastructure is we are going to setup the management console for our infrastructure.  This will act as a jump console and deployment console for the main cluster.  For the manager the first thing we have to do is generate ssh keys if this is not built into your template.  Ansible is going to need keys to login remotely.  
+In this first technical entry for setting up the infrastructure we are going to setup the mnagement console for our infrastructure.  This will act as a jump console and deployment console for the main cluster.  For the manager the first thing we have to do is generate ssh keys if this is not built into your template.  Ansible is going to need keys to login remotely to our cluster machines. 
 To generate your keys use this command:
 
 ```
 ssh-keygen -t ecdsa -b 521
 ```
-When asked, do not choose a password.  Ansible is going to need password less ssh to work correctly.  We will go into details about using ansible and deployment in the next blog entry when we setup the k3s cluster. 
+When asked, do not choose a password.  Ansible is going to need password less ssh to work correctly.  We will go into details about using ansible and deployment in the next blog entry when we setup the K3s cluster. 
  
 The .ssh directory should now have a key called id_ecdsa and an id_ecsda.pub.  These will be needed for future parts of this deployment and by the GoCD server.
 
@@ -45,7 +45,7 @@ You have to add your user to the docker group.  This will allow you to run docke
 sudo usermod -aG docker <username>
 ```
 
-Logout and relogin into you account verify docker is working as expected
+Logout and relogin into you account and verify docker is working as expected
 Run the following commands:
 ```
 docker version
@@ -132,7 +132,7 @@ sudo systemctl start go-server
 sudo systemctl start go-agent
 ```
 
-Ensure the server has started by browsing to http://consolemanagerip:8153
+Ensure the server has started by browsing to http://<yourip>:8153
 
 Click Agents on the top menu
 
@@ -233,7 +233,7 @@ mkdir ~/acme-dns/config
 nano config.cfg
 ```
 
-In the config.cfg paste except replacing rfinf.link with your actual domain:
+In the config.cfg paste except replacing rfinf.link with your actual domain and the ip's with your external ip's of your network:
 
 
 ```
@@ -315,7 +315,7 @@ Now we need to run the certbot program. Now run the following on the console:
 certbot certonly -d "*.rtinf.link" -d "rtinf.link" --agree-tos --manual-public-ip-logging-ok --server https://acme-v02.api.letsencrypt.org/directory --preferred-challenges dns --manual --manual-auth-hook /etc/letsencrypt/acme-dns-auth.py --debug-challenges
 ```
 
-This will generate a cname to put in our DNS, I find the whole thing takes a while to propagate so you might want to wait a few minutes and the verification.  If it fails try again.  
+This will generate a cname to put in our DNS.  Create the cname entry which it generates on your DNS provider. I find the whole thing takes a while to propagate so you might want to wait a few minutes and the verification.  If it fails try again.  
 
 Finally add a crontab to renew the cert regularly
 
@@ -422,5 +422,5 @@ systemctl restart apache2
 
 You should now be able to browse to https://gitea.<youdomainname> and https://gocd.<youdomain>
 
-Now that the overall management console is setup in the next blog we are going to go through and discuss using ansible and setting up our K3s cluster
+Now that the overall management console is setup in the next blog we are going to go through and discuss using ansible and setting up our K3s cluster.
 

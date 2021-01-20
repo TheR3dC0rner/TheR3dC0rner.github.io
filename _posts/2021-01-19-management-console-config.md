@@ -77,6 +77,7 @@ services:
     environment:
       - USER_UID=1000
       - USER_GID=1000
+      - ROOT_URL=https://gitea.rtinf.link/
     restart: always
     networks:
       - gitea
@@ -88,7 +89,7 @@ services:
       - "8888:3000"
       - "222:22"
 ```
-
+Update the root_url to a domain you will run in your enviroment.  We will use this domain later to register the ssl certificate for gittea
 Then run:
 
 ```

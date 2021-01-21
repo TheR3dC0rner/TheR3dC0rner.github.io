@@ -138,7 +138,7 @@ mkdir templates
 In this directory edit a file called hosts.j2
 Make the contents of this file:
 ```
-# {{ ansible_managed }}
+&#35; {{ ansible_managed }}
 127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
 ::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
 

@@ -30,6 +30,7 @@ mkdir misctasks
 ```
 now lets create the play book itself:
 ```
+{% raw %}
 ---
 - hosts: all
   tasks:
@@ -39,6 +40,7 @@ now lets create the play book itself:
       user: admin1
       state: present
       key: "{{ lookup('file', '~/.ssh/id_ecdsa.pub') }}"
+{% endraw %}
 ```
 
 
@@ -146,7 +148,6 @@ Make the contents of this file:
 {% set short_name = item.split('.') %}
 {{ hostvars[item]['ansible_host'] }}  {{ item }} {{ short_name[0] }}
 {% endfor %}
-{% endraw %}
 ```
 
 Now in this playbook we have 2 tasks.  One is pretty obvious.  The hostname module makes the inventory hostname based on the hostname in the inventory file.  The second module we use is template.  This lets us define a file and perform a loop through the our inventory and ips and place them in a proper /etc/host file.  This is a simple template but a good example.  Ansible uses Jinja2 templating to enable dynamic expressions and access to variables. To call variables in ansible we use the {{ variable name }}.  This template uses a lot of built in variables.   

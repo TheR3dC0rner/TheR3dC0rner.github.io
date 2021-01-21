@@ -1,3 +1,6 @@
+---
+date: 2021-01-19 11:00:00
+---
 ## **Overview For Red Team Deployable Infrastructure**
 
 These blog entries are going to be about my design of a dynamic red team infrastructure using Kubernetes.  This fist blog is going to go through the basic components and what will make up the cluster.   

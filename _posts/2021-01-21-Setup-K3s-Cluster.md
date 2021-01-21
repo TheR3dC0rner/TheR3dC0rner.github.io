@@ -1,4 +1,4 @@
-f## K3s Cluster Setup
+## K3s Cluster Setup
 
 In this second technical article I am going to go through the basics of ansible to do some basic configuration of our hosts.  Then we will use someone elses ansible play book to create our K3s cluster.  The first thing I want to do is establish an git repository  for our infrastructure deployment.  This will help in documenting what was done and for future deployments of clusters.  Lets browse over to our gittea repository and make a new project.  Im going to call this repository rtk3sinf.  First click the + in the upper right hand corner and click New Repository.
 

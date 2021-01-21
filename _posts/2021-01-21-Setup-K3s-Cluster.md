@@ -1,4 +1,4 @@
-## K3s Cluster Setup
+f## K3s Cluster Setup
 
 In this second technical article I am going to go through the basics of ansible to do some basic configuration of our hosts.  Then we will use someone elses ansible play book to create our K3s cluster.  The first thing I want to do is establish an git repository  for our infrastructure deployment.  This will help in documenting what was done and for future deployments of clusters.  Lets browse over to our gittea repository and make a new project.  Im going to call this repository rtk3sinf.  First click the + in the upper right hand corner and click New Repository.
 
@@ -108,7 +108,6 @@ You should get a result similar to this:
 
 On each server your sudo file should have a line similar to this:
 ```
-# Allow members of group sudo to execute any command
 %sudo   ALL=(ALL) NOPASSWD: ALL
 ```
 
@@ -138,7 +137,8 @@ mkdir templates
 In this directory edit a file called hosts.j2
 Make the contents of this file:
 ```
-&#35; {{ ansible_managed }}
+{% raw %}
+# {{ ansible_managed }}
 127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
 ::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
 
@@ -146,6 +146,7 @@ Make the contents of this file:
 {% set short_name = item.split('.') %}
 {{ hostvars[item]['ansible_host'] }}  {{ item }} {{ short_name[0] }}
 {% endfor %}
+{% endraw %}
 ```
 
 Now in this playbook we have 2 tasks.  One is pretty obvious.  The hostname module makes the inventory hostname based on the hostname in the inventory file.  The second module we use is template.  This lets us define a file and perform a loop through the our inventory and ips and place them in a proper /etc/host file.  This is a simple template but a good example.  Ansible uses Jinja2 templating to enable dynamic expressions and access to variables. To call variables in ansible we use the {{ variable name }}.  This template uses a lot of built in variables.   

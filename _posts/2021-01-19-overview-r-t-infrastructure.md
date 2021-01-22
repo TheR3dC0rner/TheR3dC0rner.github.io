@@ -54,8 +54,7 @@ The basic layout of the infrastructure looks a bit like this:
 ![basicdiagram](../images/basicdiagram.png)
 
 
-Each blog entry will compromise of setting up various components of the infrastructure.  I will caveat this is not necessarily using industry standards and I might do things my way instead of what is recommended though I am open for feedback.  This is the overall breakdown of future blogs which will be published.  
-  
+Each blog entry will compromise of setting up various components of the infrastructure.  I will caveat this is not necessarily using industry standards and I might do things my way instead of what is recommended though I am open for feedback.  This is the overall breakdown of future blogs which will be published.  I will update the links as the each entry becomes availabe.  
 1. [Setting up the management server](https://ther3dc0rner.github.io/management-console-config/)
 2. [Deploying our cluster using ansible](https://ther3dc0rner.github.io/Setup-K3s-Cluster/)
 3. Creating our core redteam infrastructure (registry, apache reverse proxy and web server)

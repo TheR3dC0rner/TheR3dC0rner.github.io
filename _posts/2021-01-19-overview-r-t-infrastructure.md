@@ -56,8 +56,8 @@ The basic layout of the infrastructure looks a bit like this:
 
 Each blog entry will compromise of setting up various components of the infrastructure.  I will caveat this is not necessarily using industry standards and I might do things my way instead of what is recommended though I am open for feedback.  This is the overall breakdown of future blogs which will be published.  
   
-1. Setting up the management server
-2. Deploying our staging and production cluster using ansible
+1. [Setting up the management server](https://ther3dc0rner.github.io/management-console-config/)
+2. [Deploying our cluster using ansible](https://ther3dc0rner.github.io/Setup-K3s-Cluster/)
 3. Creating our core redteam infrastructure (registry, apache reverse proxy and web server)
 4. Logging (deploying Fluentd, Graylog and Slack)
 5. Building c2 instances and deploying the instances to our k3s cluster
